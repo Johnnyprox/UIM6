@@ -1,0 +1,7 @@
+filePath = pwd
+inputData = readtable([ filePath '/' 'dataOH.csv' ]);
+s = inputData(inputData.Year <= 2006,:);
+medals
+testingData = cvpartition (s.Year, "Holdout", 0.3);
+dataTest = s(testingData.test,:);
+dataTrain = s(testingData.training,:);
